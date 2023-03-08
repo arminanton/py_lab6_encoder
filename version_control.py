@@ -1,5 +1,6 @@
 # version control encoder - lab 6
 # Author: Guilherme Armin Da Silva Anton (aka Armin)
+# Partner: Yutaka Stephens
 
 # importing these two to handle script exit behaviour
 import shlex
@@ -14,6 +15,14 @@ def encode(original):
         num += 3
         encoded += f"{num}"
     return encoded
+
+def decode(encoded):
+    chars = [encoded]
+    original = ""
+    for char in chars:
+        num = int(char) - 3
+        original += f"{num}"
+    return original
 
 # main function
 def main() -> int:
