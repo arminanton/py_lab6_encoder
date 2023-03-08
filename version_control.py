@@ -16,13 +16,14 @@ def encode(original):
         encoded += f"{num}"
     return encoded
 
-def decode(encoded):
-    chars = [encoded]
-    original = ""
-    for char in chars:
-        num = int(char) - 3
-        original += f"{num}"
-    return original
+def decode(pass_input):
+    # turns input string into a list to iterate through
+    encoded = list(pass_input.strip())
+    # turns list values into an integer, and then subtracts 3 to each
+    new_pass = [int(x) - 3 for x in encoded]
+    # turns the list back into a string
+    decoded_pass = ''.join(str(i) for i in new_pass)
+    return decoded_pass
 
 # main function
 def main() -> int:
